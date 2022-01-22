@@ -43,10 +43,8 @@ def write_file(file_list):
 
 def git_push():
     while True:
-        fuzzy = random.randint(1,5)
-        time.sleep(fuzzy)
-        add_command = "git add .".split()
-        subprocess.run(add_command, shell=True, check=True)
+
+        subprocess.run(["git", "add", "."], shell=True, check=True)
         subprocess.run(['git', 'commit', '-a','--allow-empty-message', '-m', '""'], shell=True, check=True)
         subprocess.run(["git", "push", "origin"], shell=True, check=True)
 
