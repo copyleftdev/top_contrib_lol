@@ -39,10 +39,9 @@ def write_file(file_list):
 
 def git_push():
     add_command = "git add .".split()
-    push_command = "git push origin".split()
     subprocess.run(add_command, shell=True, check=True)
     subprocess.run(["git", "commit", "-m", f"{fake.catch_phrase()}"], shell=True, check=True)
-    subprocess.run([push_command])
+    subprocess.run(["git", "push", "origin"], shell=True, check=True)
 
 
 
