@@ -47,7 +47,7 @@ def git_push():
         time.sleep(fuzzy)
         add_command = "git add .".split()
         subprocess.run(add_command, shell=True, check=True)
-        subprocess.run(["git", "commit", "-m", f"{fake.catch_phrase()}"], shell=True, check=True)
+        subprocess.run(["git", "commit", "-m", "update"], shell=True, check=True)
         subprocess.run(["git", "push", "origin"], shell=True, check=True)
 
 
