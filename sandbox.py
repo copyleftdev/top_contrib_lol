@@ -42,16 +42,16 @@ def write_file(file_list):
 
 
 def git_push():
-    while True:
-
-        subprocess.run(["git", "add", "."], shell=True, check=True)
-        subprocess.run(['git', 'commit', '-a','--allow-empty-message', '-m', '""'], shell=True, check=True)
+        add_command = "git add .".split()
+        subprocess.run(add_command, shell=True, check=True)
+        subprocess.run(["git", "commit", "-m", f"{fake.catch_phrase()}"], shell=True, check=True)
         subprocess.run(["git", "push", "origin"], shell=True, check=True)
 
 
 def actor_init():
-    random_file_sample = random.sample(load_langs("lang_refs"), random.randint(1, 20))
-    write_file(random_file_sample)
-    git_push()
+    while True:
+        random_file_sample = random.sample(load_langs("lang_refs"), random.randint(1, 20))
+        write_file(random_file_sample)
+        git_push()
 
 actor_init()
