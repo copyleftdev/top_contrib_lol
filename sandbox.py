@@ -39,10 +39,11 @@ def write_file(file_list):
 
 def git_push():
     add_command = "git add .".split()
-    commit_command = f"git commit -m 'added {fake.catch_phrase()}'"
-    push_command = "git push origin"
-    for git_cmds in (add_command, commit_command, push_command):
-        subprocess.run(git_cmds, shell=True, check=True)
+    push_command = "git push origin".split()
+    subprocess.run(add_command, shell=True, check=True)
+    subprocess.run(["git", "commit", "-m", f"{fake.catch_phrase()}"], shell=True, check=True)
+    subprocess.run([push_command])
+
 
 
 # random_file_sample = random.sample(load_langs("lang_refs"), random.randint(1, 20))
