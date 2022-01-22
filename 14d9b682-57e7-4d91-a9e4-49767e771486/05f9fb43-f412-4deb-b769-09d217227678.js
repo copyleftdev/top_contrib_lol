@@ -1,0 +1,1 @@
+class HelloWorld extends Mutator;
