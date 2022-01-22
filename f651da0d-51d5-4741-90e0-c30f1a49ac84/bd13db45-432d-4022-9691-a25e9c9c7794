@@ -1,0 +1,1 @@
+class Main inherits IO {
