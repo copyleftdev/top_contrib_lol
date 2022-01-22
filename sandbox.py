@@ -32,9 +32,12 @@ def write_file(file_list):
     for f in file_list:
         for k,v in f.items():
             with open(f"{k}", "r") as infile:
-                content = infile.readline()
-                with open(f"{dirc}/{str(uuid.uuid4())}{v}", "w") as outfile:
-                    outfile.writelines(content)
+                try:
+                    content = infile.readline()
+                    with open(f"{dirc}/{str(uuid.uuid4())}{v}", "w") as outfile:
+                        outfile.writelines(content)
+                except:
+                    pass
 
 
 def git_push():
