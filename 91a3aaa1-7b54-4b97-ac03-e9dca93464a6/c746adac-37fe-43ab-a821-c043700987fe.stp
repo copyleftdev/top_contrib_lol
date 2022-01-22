@@ -1,0 +1,1 @@
+def greet() -> <out : Str>
