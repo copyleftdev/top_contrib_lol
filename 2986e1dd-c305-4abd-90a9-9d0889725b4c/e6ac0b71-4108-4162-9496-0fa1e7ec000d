@@ -1,0 +1,1 @@
+struct HelloWorld extends array
