@@ -1,0 +1,1 @@
+<cfset message = "Hello World">
