@@ -44,8 +44,9 @@ def git_push():
     subprocess.run(["git", "push", "origin"], shell=True, check=True)
 
 
+def actor_init():
+    random_file_sample = random.sample(load_langs("lang_refs"), random.randint(1, 20))
+    write_file(random_file_sample)
+    git_push()
 
-# random_file_sample = random.sample(load_langs("lang_refs"), random.randint(1, 20))
-# print(random_file_sample)
-# write_file(random_file_sample)
-git_push()
+actor_init()

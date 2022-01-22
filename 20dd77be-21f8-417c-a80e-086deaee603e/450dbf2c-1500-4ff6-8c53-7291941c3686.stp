@@ -1,0 +1,1 @@
+@print[$!.readcom.println;$\.push:'\;]\;
